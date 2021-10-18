@@ -1,4 +1,5 @@
-let trip = {
+
+let = [let trip = {
 	KyivLviv: {
 		duration: "5 годин",
 		stop1: "Житомир",
@@ -39,3 +40,4 @@ let buses = {
 		info: 2
 	},
 }
+]
