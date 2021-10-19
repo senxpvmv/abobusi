@@ -1,4 +1,24 @@
 *{
-    background-color: rgba(238, 103, 170, 0.507);
+    background-color: rgba(109, 101, 105, 0.507);
     margin: 0;
+}
+
+.from {
+    margin: 5px;
+}
+
+.from-head {
+    margin: 5px;
+}
+
+.to {
+    margin: 5px;
+}
+
+.to-head {
+    margin: 5px;
+}
+
+.find {
+    margin-left: 1%;
 }

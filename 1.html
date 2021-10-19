@@ -3,18 +3,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Розклад міжміських автобусів</title>
     <link rel="stylesheet" href="1.css">
 </head>
 <body>
-    <form name = "inputs">
-        <p>Звідки:</p>
-        <input name = "from" type="text" size="40">
+    <div class = "inputs">
+        <p class = "from-head">Звідки:</p>
+        <input class = "from" type="text" size= 40 >
     
-        <p>Куди:</p>
-        <input name = "to" type="text" size="40">
+        <p class= "to-head">Куди:</p>
+        <input class = "to" name = "to" type="text" size= 40>
 
-    </form>
+        <input class= "find" type="button" value="Знайти">
+
+        <h1 class = "result"></h1>
+    </div>
     
 </body>
 <script src="1.js"> </script>
