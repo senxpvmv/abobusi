@@ -4,36 +4,37 @@ let trips = [
 	{duration: "10 годин", stops: ["Харків", "Каховка", "Мелітополь", "Волноваха", "Бердянск", "Миколаїв"]}
 ]
 
-let buses = [
-	
-	{},
-]
-
+let from = document.querySelector(".from")
 let to = document.querySelector(".to")
-let filtered = trips.filter((key) => key.stops.includes(to.value))
 
-to.onkeydown = (e) => {
-	if(e.keyCode == 13) {
-		// document.querySelector(".result").innerHTML = trips.filter((a) => a.stops.includes(to.value))
-		document.querySelector('.result').innerHTML = `<p>Duration ${filtered.duration}, Stops: ${filtered.stops}</p>`
-	};
+document.querySelector(".find").onclick=(e) => filter(e)
+to.onkeydown=(e) => filter(e)
+
+function filter(e) {
+    if(e.keyCode == 13 || e.button == 0) {
+        let filtered = trips.filter((key) => key.stops.includes(to.value) && key.stops.includes(from.value))
+        document.querySelector('.result').innerHTML = ""
+        for (let key of filtered) {
+            document.querySelector('.result').innerHTML += `<p>Тривалість поїздки: ${key.duration}, <br> Зупинки: ${key.stops+" "}</p>`
+        }
+    }
 };
 
-function contentTemplate(item) {
-    let template = `<div class="content-item m-1">
-        <div class="abobus-img">
-            <img src="${item.imgsrc}" />
-        </div>
-        <div class="content-info">
-            <h1 class="text-result><b>Тривалість поїздки</b>: ${item.duration}</h1>
-            <div class="text-result"><b>Зупинки</b>: ${item.stops}</div>
-			<div class="text-result"><b>Кількість місць</b>: ${item.seating}</div>
-            <div class="text-result"><b>Марка</b>: ${item.bus_name}</div>
-            <div class="text-result"><b>Тип двигуна</b>: ${item.bus_enginetype}</div>
-			<div class="text-result"><b>Л.с.</b>: ${item.bus_horsepower}</div>
-			<div class="text-result"><b>Додаткова інформація</b>: ${item.bus_info}</div>
-        </div>
-    </div>`;
+// function contentTemplate(item) {
+//     let template = `<div class="content-item m-1">
+//         <div class="abobus-img">
+//             <img src="${item.imgsrc}" />
+//         </div>
+//         <div class="content-info">
+//             <h1 class="text-result><b>Тривалість поїздки</b>: ${item.duration}</h1>
+//             <div class="text-result"><b>Зупинки</b>: ${item.stops}</div>
+// 			<div class="text-result"><b>Кількість місць</b>: ${item.seating}</div>
+//             <div class="text-result"><b>Марка</b>: ${item.bus_name}</div>
+//             <div class="text-result"><b>Тип двигуна</b>: ${item.bus_enginetype}</div>
+// 			<div class="text-result"><b>Л.с.</b>: ${item.bus_horsepower}</div>
+// 			<div class="text-result"><b>Додаткова інформація</b>: ${item.bus_info}</div>
+//         </div>
+//     </div>`;
 
-    return template;
-};
+//     return template;
+// };
