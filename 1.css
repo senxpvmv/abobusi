@@ -1,0 +1,36 @@
+*{
+    background-color: rgb(230, 213, 221);
+    margin-left: 5px;
+}
+
+.from {
+    margin: 5px;
+    height: 5%;
+    font-size: 170%;
+}
+
+.from-head {
+    margin: 5px;
+}
+
+.to {
+    margin: 5px;
+    height: 5%;
+    font-size: 170%;
+}
+
+.to-head {
+    margin: 5px;
+}
+
+.find {
+    margin-left: 1%;
+    height: 5%;
+    width: 10%;
+    font-size: 170%;
+}
+
+.img_result {
+    border: rgb(255, 0, 128);
+    border: 2px;
+}
